@@ -1,0 +1,116 @@
+INDEX DE HTML
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <title>Prueba de Algortimo</title>
+</head>
+<body>
+    <header>
+      <div>
+        <img src="./img/Orion.jpeg" alt="Imagen no encontrada" width="90px">
+        <h3>Next Programming</h3>
+      </div>
+        <nav>
+            <ul>  
+                <li><a href="#acerca"><h4>Acerca de</h4></a></li>
+                <li><a href="./inter.html"><h4>Inicio</h4></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Practica de Ejercicios Bucles</h1>
+            <nav>
+                <ul class="ejercicios">
+                    <li><a href="./pages/simulador.html"><h1>Simulador</h1></a></li> 
+               </ul>
+            </nav>
+        </section>
+        <section id="acerca">
+            <p>
+            Como un universitario especializado en programación, con una sólida base de 
+            conocimientos y habilidades en el desarrollo de software. He trabajado en diversos proyectos, 
+            lo que me ha permitido adquirir una experiencia significativa en este campo. Mi enfoque en la 
+            programación no solo refleja mi capacidad técnica, sino también mi dedicación y pasión por crear 
+            soluciones innovadoras y eficientes.
+            </p>
+            <p>
+            Mi experiencia me ha llevado a dominar diversas herramientas y lenguajes de programación, 
+            lo que me convierte en un recurso valioso en cualquier equipo de desarrollo. Como universitario, 
+            estoy en constantemente aprendiendo y mejorando, lo que me permite estar al tanto de las últimas 
+            tendencias y metodologías en la industria del software. Este equilibrio entre la teoría académica
+            y la experiencia práctica me posiciona para enfrentar desafíos complejos en el futuro.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <h5>Next Programming - Derechos Reservados <span>Corporacion N.P.</span></h5>
+    </footer>
+</body>
+</html>
+
+CSS
+
+body{
+    background: cadetblue;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+Pagina de HTML del simulador 
+ <section id="ejercicio19" class="sim">
+            <form class="bc" id="quesForm19">
+                <h3>Ejercicio 19</h3>
+                <p>¿Cual de las siguientes afirmaciones sobre la complejidad algoritmica es correcta?</p>
+                <div class="simu">
+                    <div>
+                        <input type="radio" name="option" value="a">
+                        <span class="ni">a. La complejidad algoritmica solo se refiere al numero de lineas de codigo.</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="option" value="b">
+                        <span>b. La complejidad algoritmica siempre es constante sin importar el tamaño del problema.</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="option" value="c">
+                        <span>c. La complejidad algoritmica mide los recursos computacionales (tiempo y espacio) que un algoritmo necesita para ejecutarse.</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="option" value="d">
+                        <span>d. La complejidad algortimica solo aplica a algoritmos iterativos.</span>
+                    </div>
+                </div>
+                <button type="button" onclick="Ejercicio_19()">Comprobar Respuesta</button>
+            </form>
+            <p class="ne" id="respu19"></p>
+        </section>
+
+Javascript
+function Ejercicio_19() {
+    const form = document.getElementById("quesForm19");
+    const resultado = document.getElementById("respu19");
+    const respuestaCorrecta = "c"; // Respuesta correcta
+    let seleccionada = ""; 
+    // Buscar la opción seleccionada
+    for (const opcion of form.elements["option"]) {
+        if (opcion.checked) {
+            seleccionada = opcion.value;
+            break;
+        }
+    }
+    // Verificar si la opción seleccionada es correcta
+    if (seleccionada === "") {
+        resultado.textContent = "Por favor, selecciona una opción.";
+    } else if (seleccionada === respuestaCorrecta) {
+        resultado.textContent = "¡Correcto! La respuesta correcta es la c.";
+        resultado.style.color = "green"; // Cambia el color del texto a verde
+    } else {
+        resultado.textContent = "Incorrecto. Intenta de nuevo.";
+        resultado.style.color = "red"; // Cambia el color del texto a rojo
+    }
+}
+
